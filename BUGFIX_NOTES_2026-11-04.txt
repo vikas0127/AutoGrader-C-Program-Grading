@@ -1,0 +1,20 @@
+AutoGrader UI startup bug fix — 2026-11-04
+
+Problem:
+A fresh Streamlit session initializes generator_metadata to None. The UI later called .get("problem") on that None value and crashed with:
+AttributeError: 'NoneType' object has no attribute 'get'
+
+Fix:
+- Normalize generator_metadata to {} unless it is a dictionary before reading metadata.
+- Treat an empty test suite as an unconfigured setup state and show an informational message.
+- Keep grading disabled until a non-empty, valid test suite with trusted expected outputs is provided.
+- Clarify the validation message for malformed or incomplete suites.
+
+Validation:
+python3 -m unittest discover -s tests -v
+31 tests passed.
+
+Note:
+The container used for this patch does not have Streamlit installed, so a live browser/HTTP UI smoke test could not be run here. The app module passes Python bytecode compilation. Run the application in the project's WSL virtual environment with:
+  source .venv/bin/activate
+  streamlit run app.py

@@ -1,0 +1,612 @@
+{
+  "source_file": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+  "source_sha256": "47805fe6ed21322212b44414a483c96e7d0819b3a60b671e0913143b22501675",
+  "rules_sha256": "ad01b8fddb563b046a513d2207a1a1e066d05cef3dd7eb7a7bbc218ee3542093",
+  "overall_score": 20.0,
+  "quality_score": 85.56,
+  "quality_score_note": "Weighted average of scoreable non-correctness quality/diagnostic metrics; skipped metrics are excluded and remaining weights are renormalized.",
+  "grade_status": "execution_blocked",
+  "first_pass": {
+    "compiled": true,
+    "smoke_ok": false,
+    "suspected_infinite_loop": true,
+    "static_sanity": {
+      "main_present": true,
+      "reader_present": false,
+      "writer_present": false,
+      "return_present": true
+    },
+    "project_mode": false,
+    "smoke_status": "timeout",
+    "smoke_error": "timeout",
+    "smoke_stderr": "",
+    "correctness_verification": "not_run",
+    "grading_warning": "First-pass execution failed. Correctness was not evaluated; the reported score is capped diagnostic credit only."
+  },
+  "metrics": {
+    "correctness": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.25,
+      "threshold": 80,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "First-pass smoke test failed; execution analyzer skipped.",
+      "error": null
+    },
+    "syntax": {
+      "status": "ok",
+      "score": 100.0,
+      "weight": 0.15,
+      "threshold": 80,
+      "threshold_met": true,
+      "effective_weight": 0.333333,
+      "contribution": 33.33,
+      "evidence": {
+        "files": [
+          {
+            "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+            "status": "ok",
+            "score": 100,
+            "evidence": {
+              "warnings": 0,
+              "errors": 0,
+              "diagnostics": "",
+              "command": [
+                "/usr/bin/gcc",
+                "-Wall",
+                "-Wextra",
+                "-std=c11",
+                "-fsyntax-only",
+                "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c"
+              ],
+              "configured_flags": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-std=c11"
+              ],
+              "diagnostic_flags": [
+                "-Wall",
+                "-Wextra",
+                "-std=c11",
+                "-fsyntax-only"
+              ]
+            },
+            "feedback": "0 warning(s), 0 error(s)."
+          }
+        ]
+      },
+      "feedback": "Analyzed 1 source file(s); mean score 100.00.",
+      "error": null
+    },
+    "structure": {
+      "status": "ok",
+      "score": 100.0,
+      "weight": 0.1,
+      "threshold": 60,
+      "threshold_met": true,
+      "effective_weight": 0.222222,
+      "contribution": 22.22,
+      "evidence": {
+        "files": [
+          {
+            "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+            "status": "ok",
+            "score": 100,
+            "evidence": {
+              "decision_tokens": 1,
+              "max_cyclomatic_threshold": 8,
+              "longest_lexical_chunk_lines": 6,
+              "max_function_length_threshold": 40,
+              "has_include_directive": true
+            },
+            "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser."
+          }
+        ]
+      },
+      "feedback": "Analyzed 1 source file(s); mean score 100.00.",
+      "error": null
+    },
+    "modularity": {
+      "status": "ok",
+      "score": 50.0,
+      "weight": 0.1,
+      "threshold": 50,
+      "threshold_met": true,
+      "effective_weight": 0.222222,
+      "contribution": 11.11,
+      "evidence": {
+        "files": [
+          {
+            "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+            "status": "ok",
+            "score": 50,
+            "evidence": {
+              "functions_detected": [
+                "main"
+              ],
+              "function_count": 1,
+              "minimum_expected": 2
+            },
+            "feedback": "Few helper functions detected; consider separating logic into reusable functions."
+          }
+        ]
+      },
+      "feedback": "Analyzed 1 source file(s); mean score 50.00.",
+      "error": null
+    },
+    "logical": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.0,
+      "threshold": 80,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "Metric disabled by rules.",
+      "error": null
+    },
+    "complexity": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "First-pass smoke test failed; execution analyzer skipped.",
+      "error": null
+    },
+    "memory_safety": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 100,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "First-pass smoke test failed; execution analyzer skipped.",
+      "error": null
+    },
+    "readability": {
+      "status": "ok",
+      "score": 85.0,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.222222,
+      "contribution": 18.89,
+      "evidence": {
+        "files": [
+          {
+            "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+            "status": "ok",
+            "score": 85,
+            "evidence": {
+              "line_count": 9,
+              "comment_blocks": 0,
+              "function_like_definitions": 1,
+              "long_lines": 0,
+              "compact_assignment_lines": 0,
+              "method": "deterministic source heuristics"
+            },
+            "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality."
+          }
+        ]
+      },
+      "feedback": "Analyzed 1 source file(s); mean score 85.00.",
+      "error": null
+    },
+    "originality": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 15,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": [],
+      "feedback": "No reference submissions supplied.",
+      "error": null
+    }
+  },
+  "flags": [
+    {
+      "type": "suspected_infinite_loop",
+      "evidence": "First-pass smoke test timed out.",
+      "note": "Correctness tests were not run. Score is limited by the configured first-pass failure cap."
+    }
+  ],
+  "errors": [],
+  "compilation": {
+    "status": "ok",
+    "executable_path": "/tmp/autograder_i6nrostm/submission",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "duration_seconds": 0.033,
+    "error": null,
+    "command": [
+      "/usr/bin/gcc",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11",
+      "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+      "-o",
+      "/tmp/autograder_i6nrostm/submission"
+    ]
+  },
+  "score_calculation": {
+    "overall_score": 20.0,
+    "raw_weighted_score": 85.56,
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "metrics": {
+      "syntax": {
+        "score": 100.0,
+        "threshold": 80,
+        "threshold_met": true,
+        "weight": 0.15,
+        "effective_weight": 0.333333,
+        "contribution": 33.33,
+        "evidence": {
+          "files": [
+            {
+              "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+              "status": "ok",
+              "score": 100,
+              "evidence": {
+                "warnings": 0,
+                "errors": 0,
+                "diagnostics": "",
+                "command": [
+                  "/usr/bin/gcc",
+                  "-Wall",
+                  "-Wextra",
+                  "-std=c11",
+                  "-fsyntax-only",
+                  "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c"
+                ],
+                "configured_flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Werror",
+                  "-std=c11"
+                ],
+                "diagnostic_flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-std=c11",
+                  "-fsyntax-only"
+                ]
+              },
+              "feedback": "0 warning(s), 0 error(s)."
+            }
+          ]
+        },
+        "feedback": "Analyzed 1 source file(s); mean score 100.00."
+      },
+      "structure": {
+        "score": 100.0,
+        "threshold": 60,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.222222,
+        "contribution": 22.22,
+        "evidence": {
+          "files": [
+            {
+              "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+              "status": "ok",
+              "score": 100,
+              "evidence": {
+                "decision_tokens": 1,
+                "max_cyclomatic_threshold": 8,
+                "longest_lexical_chunk_lines": 6,
+                "max_function_length_threshold": 40,
+                "has_include_directive": true
+              },
+              "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser."
+            }
+          ]
+        },
+        "feedback": "Analyzed 1 source file(s); mean score 100.00."
+      },
+      "modularity": {
+        "score": 50.0,
+        "threshold": 50,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.222222,
+        "contribution": 11.11,
+        "evidence": {
+          "files": [
+            {
+              "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+              "status": "ok",
+              "score": 50,
+              "evidence": {
+                "functions_detected": [
+                  "main"
+                ],
+                "function_count": 1,
+                "minimum_expected": 2
+              },
+              "feedback": "Few helper functions detected; consider separating logic into reusable functions."
+            }
+          ]
+        },
+        "feedback": "Analyzed 1 source file(s); mean score 50.00."
+      },
+      "readability": {
+        "score": 85.0,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.222222,
+        "contribution": 18.89,
+        "evidence": {
+          "files": [
+            {
+              "path": "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c",
+              "status": "ok",
+              "score": 85,
+              "evidence": {
+                "line_count": 9,
+                "comment_blocks": 0,
+                "function_like_definitions": 1,
+                "long_lines": 0,
+                "compact_assignment_lines": 0,
+                "method": "deterministic source heuristics"
+              },
+              "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality."
+            }
+          ]
+        },
+        "feedback": "Analyzed 1 source file(s); mean score 85.00."
+      }
+    },
+    "skipped_metrics": [
+      {
+        "name": "correctness",
+        "weight": 0.25,
+        "reason": "First-pass smoke test failed; execution analyzer skipped.",
+        "status": "skipped"
+      },
+      {
+        "name": "complexity",
+        "weight": 0.1,
+        "reason": "First-pass smoke test failed; execution analyzer skipped.",
+        "status": "skipped"
+      },
+      {
+        "name": "memory_safety",
+        "weight": 0.1,
+        "reason": "First-pass smoke test failed; execution analyzer skipped.",
+        "status": "skipped"
+      },
+      {
+        "name": "originality",
+        "weight": 0.1,
+        "reason": "No reference submissions supplied.",
+        "status": "skipped"
+      }
+    ],
+    "original_active_weight": 1.0,
+    "scoreable_weight": 0.45,
+    "score_cap": 20.0,
+    "cap_applied": true,
+    "cap_reason": "First-pass smoke test failed with status 'timeout'; functional correctness could not be verified.",
+    "correctness_first_award": false
+  },
+  "score_summary": {
+    "raw_weighted_score": 85.56,
+    "final_score": 20.0,
+    "score_cap": 20.0,
+    "cap_applied": true,
+    "cap_reason": "First-pass smoke test failed with status 'timeout'; functional correctness could not be verified."
+  },
+  "test_cases_total": 3,
+  "rules_file": "/mnt/data/AutoGrader_Final_Submission/rules/rules.json",
+  "rules": {
+    "version": 2,
+    "problem": "instructor_selected_template",
+    "time_limit_s": 1,
+    "memory_limit_mb": 64,
+    "compile_flags": [
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11"
+    ],
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "grading_policy": {
+      "all_correctness_tests_fail": {
+        "enabled": true,
+        "trigger_statuses": [
+          "timeout",
+          "crash",
+          "execution_error"
+        ],
+        "score_cap": 20
+      },
+      "compile_failure_score": 0,
+      "correctness_first": false,
+      "first_pass_failure": {
+        "enabled": true,
+        "trigger_statuses": [
+          "timeout",
+          "crash",
+          "error",
+          "output_limit_exceeded"
+        ],
+        "score_cap": 20,
+        "description": "If compile succeeds but the first-pass smoke execution fails, correctness analyzers are not run and the overall score is capped."
+      }
+    },
+    "metrics": {
+      "correctness": {
+        "enabled": true,
+        "analyzer": "io_tests",
+        "weight": 0.25,
+        "params": {},
+        "threshold": 80
+      },
+      "syntax": {
+        "enabled": true,
+        "analyzer": "compiler_warnings",
+        "weight": 0.15,
+        "params": {
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ]
+        },
+        "threshold": 80
+      },
+      "structure": {
+        "enabled": true,
+        "analyzer": "static_analysis",
+        "weight": 0.1,
+        "params": {
+          "max_cyclomatic": 8,
+          "max_function_length": 40
+        },
+        "threshold": 60
+      },
+      "modularity": {
+        "enabled": true,
+        "analyzer": "function_split",
+        "weight": 0.1,
+        "params": {
+          "expect_helpers": true,
+          "min_functions": 2
+        },
+        "threshold": 50
+      },
+      "logical": {
+        "enabled": false,
+        "analyzer": "edge_case_runner",
+        "weight": 0.0,
+        "params": {},
+        "threshold": 80
+      },
+      "complexity": {
+        "enabled": true,
+        "analyzer": "complexity_estimator",
+        "weight": 0.1,
+        "params": {
+          "required": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "threshold": 70
+      },
+      "memory_safety": {
+        "enabled": true,
+        "analyzer": "sanitizer_run",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-fsanitize=address,undefined"
+          ]
+        },
+        "threshold": 100
+      },
+      "readability": {
+        "enabled": true,
+        "analyzer": "readability_review",
+        "weight": 0.1,
+        "params": {
+          "provider": "deterministic_heuristic",
+          "temperature": 0,
+          "seed": 42
+        },
+        "threshold": 70
+      },
+      "originality": {
+        "enabled": true,
+        "analyzer": "similarity_flag",
+        "weight": 0.1,
+        "params": {
+          "corpus_dir": "submissions/",
+          "flag_threshold": 0.85
+        },
+        "threshold": 15
+      }
+    }
+  },
+  "submission_mode": "standalone_c",
+  "source_files_analyzed": [
+    "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c"
+  ],
+  "source_sha256_by_file": {
+    "/mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c": "47805fe6ed21322212b44414a483c96e7d0819b3a60b671e0913143b22501675"
+  },
+  "tool_versions": {
+    "python": "3.13.5",
+    "gcc": "/usr/bin/gcc"
+  },
+  "usefulness_limitations": {
+    "usefulness": [
+      {
+        "use_case": "Large programming courses",
+        "example": "Apply one test suite and rubric to hundreds of submissions.",
+        "benefit": "Consistent, repeatable grading and faster feedback."
+      },
+      {
+        "use_case": "Introductory programming feedback",
+        "example": "Show an input that causes a wrong answer with expected and actual output.",
+        "benefit": "Students can reproduce and debug failures."
+      },
+      {
+        "use_case": "Code-quality screening",
+        "example": "Report warning, structure, modularity and readability indicators.",
+        "benefit": "Instructor can assess more than output correctness."
+      },
+      {
+        "use_case": "Originality triage",
+        "example": "Flag submissions above a configurable source similarity threshold.",
+        "benefit": "Focus human review on candidate pairs; does not prove copying."
+      }
+    ],
+    "limitations": [
+      {
+        "limitation": "Finite tests do not prove correctness",
+        "example": "A program passes supplied tests but fails an untested extreme input."
+      },
+      {
+        "limitation": "Sanitizers only detect executed defects",
+        "example": "An invalid access exists in a branch none of the supplied inputs reach."
+      },
+      {
+        "limitation": "Similarity can have false positives and negatives",
+        "example": "A short mandated solution looks similar, or copied code is heavily refactored."
+      },
+      {
+        "limitation": "Heuristic source analyzers can misestimate properties",
+        "example": "A loop bound depends on input in a way the lexical estimator does not recognize."
+      }
+    ]
+  },
+  "limitations": [
+    "POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.",
+    "Sanitizers detect only errors triggered by supplied test inputs.",
+    "Complexity, structure, readability and similarity are heuristic.",
+    "A similarity flag is not proof of plagiarism or LLM use."
+  ],
+  "generated_at_utc": "2026-11-05T03:29:29.636597+00:00"
+}

@@ -1,0 +1,72 @@
+AUTOGRADER REPORT
+==================================================
+Source: /tmp/autograder_norm/tests/inputs/infinite_loop.c
+Overall score: 83.75/100
+Grade status: partial
+
+SCORING SUMMARY
+--------------------------------------------------
+Raw weighted score: 83.75/100
+Final score: 83.75/100
+Score cap: None
+Cap applied: False
+
+FIRST-PASS CHECK
+--------------------------------------------------
+Compiled: True
+Smoke test: timeout
+Suspected infinite loop: True
+  main_present: True
+  reader_present: False
+  writer_present: False
+  return_present: True
+
+METRICS
+--------------------------------------------------
+correctness: None (weight=0.2, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+syntax: 100 (weight=0.1, effective_weight=0.25, contribution=25.0, threshold=80, threshold_met=True)
+  0 warning(s), 0 error(s).
+structure: 100 (weight=0.1, effective_weight=0.25, contribution=25.0, threshold=60, threshold_met=True)
+  Source structure metrics are lexical approximations; they do not replace a full C parser.
+modularity: 50 (weight=0.1, effective_weight=0.25, contribution=12.5, threshold=50, threshold_met=True)
+  Few helper functions detected; consider separating logic into reusable functions.
+logical: None (weight=0.1, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+complexity: None (weight=0.1, effective_weight=0, contribution=None, threshold=70, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+memory_safety: None (weight=0.1, effective_weight=0, contribution=None, threshold=100, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+readability: 85 (weight=0.1, effective_weight=0.25, contribution=21.25, threshold=70, threshold_met=True)
+  Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality.
+originality: None (weight=0.1, effective_weight=0, contribution=None, threshold=15, threshold_met=None)
+  No reference submissions supplied.
+
+FLAGS FOR REVIEW
+--------------------------------------------------
+{'type': 'suspected_infinite_loop', 'evidence': 'First-pass smoke test timed out.'}
+
+USEFULNESS IN REAL-LIFE SETTINGS
+--------------------------------------------------
+- Large programming courses: Apply one test suite and rubric to hundreds of submissions.
+  Benefit: Consistent, repeatable grading and faster feedback.
+- Introductory programming feedback: Show an input that causes a wrong answer with expected and actual output.
+  Benefit: Students can reproduce and debug failures.
+- Code-quality screening: Report warning, structure, modularity and readability indicators.
+  Benefit: Instructor can assess more than output correctness.
+- Originality triage: Flag submissions above a configurable source similarity threshold.
+  Benefit: Focus human review on candidate pairs; does not prove copying.
+
+CONCRETE LIMITATIONS
+--------------------------------------------------
+- Finite tests do not prove correctness: A program passes supplied tests but fails an untested extreme input.
+- Sanitizers only detect executed defects: An invalid access exists in a branch none of the supplied inputs reach.
+- Similarity can have false positives and negatives: A short mandated solution looks similar, or copied code is heavily refactored.
+- Heuristic source analyzers can misestimate properties: A loop bound depends on input in a way the lexical estimator does not recognize.
+
+LIMITATIONS
+--------------------------------------------------
+- POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.
+- Sanitizers detect only errors triggered by supplied test inputs.
+- Complexity, structure, readability and similarity are heuristic.
+- A similarity flag is not proof of plagiarism or LLM use.

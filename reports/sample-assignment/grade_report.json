@@ -1,0 +1,784 @@
+{
+  "source_file": "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c",
+  "source_sha256": "f948bf20c55d5fdc65be2c6a5363a355d44d4c08b5210e0d1e065fd521d002ba",
+  "rules_sha256": "3f9ea13d420945a4df5319b755167178ec7a0875a8f399ae8da660f71a2eab44",
+  "overall_score": 90.0,
+  "grade_status": "complete",
+  "first_pass": {
+    "compiled": true,
+    "smoke_ok": true,
+    "suspected_infinite_loop": false,
+    "static_sanity": {
+      "main_present": true,
+      "reader_present": true,
+      "writer_present": true,
+      "return_present": true
+    },
+    "smoke_status": "ok"
+  },
+  "metrics": {
+    "correctness": {
+      "status": "ok",
+      "score": 100.0,
+      "weight": 0.2,
+      "threshold": 80,
+      "threshold_met": true,
+      "effective_weight": 0.222222,
+      "contribution": 22.22,
+      "evidence": {
+        "passed": 4,
+        "total": 4,
+        "cases": [
+          {
+            "name": "pdf_sample_7_5",
+            "input": "7 5\n",
+            "expected_output": "12\n",
+            "actual_output": "12\n",
+            "stderr": "",
+            "passed": true,
+            "status": "passed",
+            "feedback": "Output matched.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          },
+          {
+            "name": "negative_values",
+            "input": "-7 3\n",
+            "expected_output": "-4\n",
+            "actual_output": "-4\n",
+            "stderr": "",
+            "passed": true,
+            "status": "passed",
+            "feedback": "Output matched.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "expected_output": "0\n",
+            "actual_output": "0\n",
+            "stderr": "",
+            "passed": true,
+            "status": "passed",
+            "feedback": "Output matched.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          },
+          {
+            "name": "signed_int_boundary",
+            "input": "2147483647 1\n",
+            "expected_output": "-2147483648\n",
+            "actual_output": "-2147483648\n",
+            "stderr": "",
+            "passed": true,
+            "status": "passed",
+            "feedback": "Output matched.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          }
+        ]
+      },
+      "feedback": "Passed 4/4 test cases.",
+      "error": null
+    },
+    "syntax": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "warnings": 0,
+        "errors": 0,
+        "diagnostics": "",
+        "command": [
+          "/usr/bin/gcc",
+          "-Wall",
+          "-Wextra",
+          "-std=c11",
+          "-fsyntax-only",
+          "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c"
+        ],
+        "configured_flags": [
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-std=c11"
+        ],
+        "diagnostic_flags": [
+          "-Wall",
+          "-Wextra",
+          "-std=c11",
+          "-fsyntax-only"
+        ]
+      },
+      "feedback": "0 warning(s), 0 error(s).",
+      "error": null
+    },
+    "structure": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 60,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "decision_tokens": 0,
+        "max_cyclomatic_threshold": 8,
+        "longest_lexical_chunk_lines": 6,
+        "max_function_length_threshold": 40,
+        "has_include_directive": true
+      },
+      "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser.",
+      "error": null
+    },
+    "modularity": {
+      "status": "ok",
+      "score": 50,
+      "weight": 0.1,
+      "threshold": 50,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 5.56,
+      "evidence": {
+        "functions_detected": [
+          "main"
+        ],
+        "function_count": 1,
+        "minimum_expected": 2
+      },
+      "feedback": "Few helper functions detected; consider separating logic into reusable functions.",
+      "error": null
+    },
+    "logical": {
+      "status": "ok",
+      "score": 100.0,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "passed": 3,
+        "total": 3,
+        "cases": [
+          {
+            "name": "negatives",
+            "input": "-7 3\n",
+            "expected_output": "-4\n",
+            "actual_output": "-4\n",
+            "status": "passed",
+            "passed": true,
+            "stderr": ""
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "expected_output": "0\n",
+            "actual_output": "0\n",
+            "status": "passed",
+            "passed": true,
+            "stderr": ""
+          },
+          {
+            "name": "int_overflow",
+            "input": "2147483647 1\n",
+            "expected_output": "-2147483648\n",
+            "actual_output": "-2147483648\n",
+            "status": "passed",
+            "passed": true,
+            "stderr": ""
+          }
+        ]
+      },
+      "feedback": "Edge cases passed: 3/3.",
+      "error": null
+    },
+    "complexity": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "loop_tokens": 0,
+        "decision_tokens": 0,
+        "estimated_bound": "O(1)",
+        "required_bound": "O(1)",
+        "sizes": [
+          1,
+          10,
+          100
+        ]
+      },
+      "feedback": "Static structural estimate only; not a formal complexity proof or reliable timing curve.",
+      "error": null
+    },
+    "memory_safety": {
+      "status": "ok",
+      "score": 75.0,
+      "weight": 0.1,
+      "threshold": 100,
+      "threshold_met": false,
+      "effective_weight": 0.111111,
+      "contribution": 8.33,
+      "evidence": {
+        "issues_detected": 1,
+        "cases": [
+          {
+            "name": "pdf_sample_7_5",
+            "input": "7 5\n",
+            "status": "clean",
+            "returncode": 0,
+            "diagnostic": ""
+          },
+          {
+            "name": "negative_values",
+            "input": "-7 3\n",
+            "status": "clean",
+            "returncode": 0,
+            "diagnostic": ""
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "status": "clean",
+            "returncode": 0,
+            "diagnostic": ""
+          },
+          {
+            "name": "signed_int_boundary",
+            "input": "2147483647 1\n",
+            "status": "memory_error",
+            "returncode": 0,
+            "diagnostic": "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c:5:5: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'\n"
+          }
+        ]
+      },
+      "feedback": "Detected runtime/sanitizer issues in 1/4 test runs. A clean run is not proof of memory safety.",
+      "error": null
+    },
+    "readability": {
+      "status": "ok",
+      "score": 85,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 9.44,
+      "evidence": {
+        "line_count": 7,
+        "comment_blocks": 0,
+        "function_like_definitions": 1,
+        "long_lines": 0,
+        "compact_assignment_lines": 0,
+        "method": "deterministic source heuristics"
+      },
+      "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality.",
+      "error": null
+    },
+    "originality": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 15,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": [],
+      "feedback": "No reference submissions supplied.",
+      "error": null
+    }
+  },
+  "flags": [],
+  "errors": [],
+  "compilation": {
+    "status": "ok",
+    "executable_path": "/tmp/autograder_s6iqhfka/submission",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "duration_seconds": 0.033,
+    "error": null,
+    "command": [
+      "/usr/bin/gcc",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11",
+      "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c",
+      "-o",
+      "/tmp/autograder_s6iqhfka/submission"
+    ]
+  },
+  "score_calculation": {
+    "overall_score": 90.0,
+    "raw_weighted_score": 90.0,
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "metrics": {
+      "correctness": {
+        "score": 100.0,
+        "threshold": 80,
+        "threshold_met": true,
+        "weight": 0.2,
+        "effective_weight": 0.222222,
+        "contribution": 22.22,
+        "evidence": {
+          "passed": 4,
+          "total": 4,
+          "cases": [
+            {
+              "name": "pdf_sample_7_5",
+              "input": "7 5\n",
+              "expected_output": "12\n",
+              "actual_output": "12\n",
+              "stderr": "",
+              "passed": true,
+              "status": "passed",
+              "feedback": "Output matched.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            },
+            {
+              "name": "negative_values",
+              "input": "-7 3\n",
+              "expected_output": "-4\n",
+              "actual_output": "-4\n",
+              "stderr": "",
+              "passed": true,
+              "status": "passed",
+              "feedback": "Output matched.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "expected_output": "0\n",
+              "actual_output": "0\n",
+              "stderr": "",
+              "passed": true,
+              "status": "passed",
+              "feedback": "Output matched.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            },
+            {
+              "name": "signed_int_boundary",
+              "input": "2147483647 1\n",
+              "expected_output": "-2147483648\n",
+              "actual_output": "-2147483648\n",
+              "stderr": "",
+              "passed": true,
+              "status": "passed",
+              "feedback": "Output matched.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            }
+          ]
+        },
+        "feedback": "Passed 4/4 test cases."
+      },
+      "syntax": {
+        "score": 100,
+        "threshold": 80,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "warnings": 0,
+          "errors": 0,
+          "diagnostics": "",
+          "command": [
+            "/usr/bin/gcc",
+            "-Wall",
+            "-Wextra",
+            "-std=c11",
+            "-fsyntax-only",
+            "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c"
+          ],
+          "configured_flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ],
+          "diagnostic_flags": [
+            "-Wall",
+            "-Wextra",
+            "-std=c11",
+            "-fsyntax-only"
+          ]
+        },
+        "feedback": "0 warning(s), 0 error(s)."
+      },
+      "structure": {
+        "score": 100,
+        "threshold": 60,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "decision_tokens": 0,
+          "max_cyclomatic_threshold": 8,
+          "longest_lexical_chunk_lines": 6,
+          "max_function_length_threshold": 40,
+          "has_include_directive": true
+        },
+        "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser."
+      },
+      "modularity": {
+        "score": 50,
+        "threshold": 50,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 5.56,
+        "evidence": {
+          "functions_detected": [
+            "main"
+          ],
+          "function_count": 1,
+          "minimum_expected": 2
+        },
+        "feedback": "Few helper functions detected; consider separating logic into reusable functions."
+      },
+      "logical": {
+        "score": 100.0,
+        "threshold": 80,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "passed": 3,
+          "total": 3,
+          "cases": [
+            {
+              "name": "negatives",
+              "input": "-7 3\n",
+              "expected_output": "-4\n",
+              "actual_output": "-4\n",
+              "status": "passed",
+              "passed": true,
+              "stderr": ""
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "expected_output": "0\n",
+              "actual_output": "0\n",
+              "status": "passed",
+              "passed": true,
+              "stderr": ""
+            },
+            {
+              "name": "int_overflow",
+              "input": "2147483647 1\n",
+              "expected_output": "-2147483648\n",
+              "actual_output": "-2147483648\n",
+              "status": "passed",
+              "passed": true,
+              "stderr": ""
+            }
+          ]
+        },
+        "feedback": "Edge cases passed: 3/3."
+      },
+      "complexity": {
+        "score": 100,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "loop_tokens": 0,
+          "decision_tokens": 0,
+          "estimated_bound": "O(1)",
+          "required_bound": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "feedback": "Static structural estimate only; not a formal complexity proof or reliable timing curve."
+      },
+      "memory_safety": {
+        "score": 75.0,
+        "threshold": 100,
+        "threshold_met": false,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 8.33,
+        "evidence": {
+          "issues_detected": 1,
+          "cases": [
+            {
+              "name": "pdf_sample_7_5",
+              "input": "7 5\n",
+              "status": "clean",
+              "returncode": 0,
+              "diagnostic": ""
+            },
+            {
+              "name": "negative_values",
+              "input": "-7 3\n",
+              "status": "clean",
+              "returncode": 0,
+              "diagnostic": ""
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "status": "clean",
+              "returncode": 0,
+              "diagnostic": ""
+            },
+            {
+              "name": "signed_int_boundary",
+              "input": "2147483647 1\n",
+              "status": "memory_error",
+              "returncode": 0,
+              "diagnostic": "/tmp/autograder_norm/tests/inputs/assignment_sample_add.c:5:5: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'\n"
+            }
+          ]
+        },
+        "feedback": "Detected runtime/sanitizer issues in 1/4 test runs. A clean run is not proof of memory safety."
+      },
+      "readability": {
+        "score": 85,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 9.44,
+        "evidence": {
+          "line_count": 7,
+          "comment_blocks": 0,
+          "function_like_definitions": 1,
+          "long_lines": 0,
+          "compact_assignment_lines": 0,
+          "method": "deterministic source heuristics"
+        },
+        "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality."
+      }
+    },
+    "skipped_metrics": [
+      {
+        "name": "originality",
+        "weight": 0.1,
+        "reason": "No reference submissions supplied.",
+        "status": "skipped"
+      }
+    ],
+    "original_active_weight": 1.0,
+    "scoreable_weight": 0.9,
+    "score_cap": null,
+    "cap_applied": false,
+    "cap_reason": null
+  },
+  "score_summary": {
+    "raw_weighted_score": 90.0,
+    "final_score": 90.0,
+    "score_cap": null,
+    "cap_applied": false,
+    "cap_reason": null
+  },
+  "test_cases_total": 4,
+  "rules_file": "/tmp/autograder_norm/rules/rules.json",
+  "rules": {
+    "version": 2,
+    "problem": "add_two_integers",
+    "time_limit_s": 1,
+    "memory_limit_mb": 64,
+    "compile_flags": [
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11"
+    ],
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "grading_policy": {
+      "all_correctness_tests_fail": {
+        "enabled": true,
+        "trigger_statuses": [
+          "timeout",
+          "crash",
+          "execution_error"
+        ],
+        "score_cap": 20
+      },
+      "compile_failure_score": 0
+    },
+    "metrics": {
+      "correctness": {
+        "enabled": true,
+        "analyzer": "io_tests",
+        "weight": 0.2,
+        "params": {
+          "testset_dir": "tests/add/"
+        },
+        "threshold": 80
+      },
+      "syntax": {
+        "enabled": true,
+        "analyzer": "compiler_warnings",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ]
+        },
+        "threshold": 80
+      },
+      "structure": {
+        "enabled": true,
+        "analyzer": "static_analysis",
+        "weight": 0.1,
+        "params": {
+          "max_cyclomatic": 8,
+          "max_function_length": 40
+        },
+        "threshold": 60
+      },
+      "modularity": {
+        "enabled": true,
+        "analyzer": "function_split",
+        "weight": 0.1,
+        "params": {
+          "expect_helpers": true,
+          "min_functions": 2
+        },
+        "threshold": 50
+      },
+      "logical": {
+        "enabled": true,
+        "analyzer": "edge_case_runner",
+        "weight": 0.1,
+        "params": {
+          "problem": "add_two_integers",
+          "cases": [
+            "negatives",
+            "zero",
+            "int_overflow"
+          ]
+        },
+        "threshold": 80
+      },
+      "complexity": {
+        "enabled": true,
+        "analyzer": "complexity_estimator",
+        "weight": 0.1,
+        "params": {
+          "required": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "threshold": 70
+      },
+      "memory_safety": {
+        "enabled": true,
+        "analyzer": "sanitizer_run",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-fsanitize=address,undefined"
+          ]
+        },
+        "threshold": 100
+      },
+      "readability": {
+        "enabled": true,
+        "analyzer": "readability_review",
+        "weight": 0.1,
+        "params": {
+          "provider": "deterministic_heuristic",
+          "temperature": 0,
+          "seed": 42
+        },
+        "threshold": 70
+      },
+      "originality": {
+        "enabled": true,
+        "analyzer": "similarity_flag",
+        "weight": 0.1,
+        "params": {
+          "corpus_dir": "submissions/",
+          "flag_threshold": 0.85
+        },
+        "threshold": 15
+      }
+    }
+  },
+  "tool_versions": {
+    "python": "3.13.5",
+    "gcc": "/usr/bin/gcc"
+  },
+  "usefulness_limitations": {
+    "usefulness": [
+      {
+        "use_case": "Large programming courses",
+        "example": "Apply one test suite and rubric to hundreds of submissions.",
+        "benefit": "Consistent, repeatable grading and faster feedback."
+      },
+      {
+        "use_case": "Introductory programming feedback",
+        "example": "Show an input that causes a wrong answer with expected and actual output.",
+        "benefit": "Students can reproduce and debug failures."
+      },
+      {
+        "use_case": "Code-quality screening",
+        "example": "Report warning, structure, modularity and readability indicators.",
+        "benefit": "Instructor can assess more than output correctness."
+      },
+      {
+        "use_case": "Originality triage",
+        "example": "Flag submissions above a configurable source similarity threshold.",
+        "benefit": "Focus human review on candidate pairs; does not prove copying."
+      }
+    ],
+    "limitations": [
+      {
+        "limitation": "Finite tests do not prove correctness",
+        "example": "A program passes supplied tests but fails an untested extreme input."
+      },
+      {
+        "limitation": "Sanitizers only detect executed defects",
+        "example": "An invalid access exists in a branch none of the supplied inputs reach."
+      },
+      {
+        "limitation": "Similarity can have false positives and negatives",
+        "example": "A short mandated solution looks similar, or copied code is heavily refactored."
+      },
+      {
+        "limitation": "Heuristic source analyzers can misestimate properties",
+        "example": "A loop bound depends on input in a way the lexical estimator does not recognize."
+      }
+    ]
+  },
+  "limitations": [
+    "POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.",
+    "Sanitizers detect only errors triggered by supplied test inputs.",
+    "Complexity, structure, readability and similarity are heuristic.",
+    "A similarity flag is not proof of plagiarism or LLM use."
+  ],
+  "generated_at_utc": "2026-10-31T05:39:03.068977+00:00"
+}

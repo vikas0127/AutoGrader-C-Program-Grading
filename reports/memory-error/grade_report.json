@@ -1,0 +1,746 @@
+{
+  "source_file": "/tmp/autograder_norm/tests/inputs/memory_error.c",
+  "source_sha256": "7f84f8aebfe66d5f9ca0ad6b8a11734a57745c40c7167f5bd55287aec3af56ef",
+  "rules_sha256": "3f9ea13d420945a4df5319b755167178ec7a0875a8f399ae8da660f71a2eab44",
+  "overall_score": 50.0,
+  "grade_status": "complete",
+  "first_pass": {
+    "compiled": true,
+    "smoke_ok": true,
+    "suspected_infinite_loop": false,
+    "static_sanity": {
+      "main_present": true,
+      "reader_present": false,
+      "writer_present": true,
+      "return_present": true
+    },
+    "smoke_status": "ok"
+  },
+  "metrics": {
+    "correctness": {
+      "status": "ok",
+      "score": 0.0,
+      "weight": 0.2,
+      "threshold": 80,
+      "threshold_met": false,
+      "effective_weight": 0.222222,
+      "contribution": 0.0,
+      "evidence": {
+        "passed": 0,
+        "total": 3,
+        "cases": [
+          {
+            "name": "positive",
+            "input": "2 3\n",
+            "expected_output": "5\n",
+            "actual_output": "363550584\n",
+            "stderr": "",
+            "passed": false,
+            "status": "wrong_answer",
+            "feedback": "Output differs from expected output.",
+            "returncode": 0,
+            "duration_seconds": 0.004
+          },
+          {
+            "name": "negative",
+            "input": "-4 9\n",
+            "expected_output": "5\n",
+            "actual_output": "1862858808\n",
+            "stderr": "",
+            "passed": false,
+            "status": "wrong_answer",
+            "feedback": "Output differs from expected output.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "expected_output": "0\n",
+            "actual_output": "-1059067416\n",
+            "stderr": "",
+            "passed": false,
+            "status": "wrong_answer",
+            "feedback": "Output differs from expected output.",
+            "returncode": 0,
+            "duration_seconds": 0.003
+          }
+        ]
+      },
+      "feedback": "Passed 0/3 test cases.",
+      "error": null
+    },
+    "syntax": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "warnings": 0,
+        "errors": 0,
+        "diagnostics": "",
+        "command": [
+          "/usr/bin/gcc",
+          "-Wall",
+          "-Wextra",
+          "-std=c11",
+          "-fsyntax-only",
+          "/tmp/autograder_norm/tests/inputs/memory_error.c"
+        ],
+        "configured_flags": [
+          "-Wall",
+          "-Wextra",
+          "-Werror",
+          "-std=c11"
+        ],
+        "diagnostic_flags": [
+          "-Wall",
+          "-Wextra",
+          "-std=c11",
+          "-fsyntax-only"
+        ]
+      },
+      "feedback": "0 warning(s), 0 error(s).",
+      "error": null
+    },
+    "structure": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 60,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "decision_tokens": 0,
+        "max_cyclomatic_threshold": 8,
+        "longest_lexical_chunk_lines": 5,
+        "max_function_length_threshold": 40,
+        "has_include_directive": true
+      },
+      "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser.",
+      "error": null
+    },
+    "modularity": {
+      "status": "ok",
+      "score": 50,
+      "weight": 0.1,
+      "threshold": 50,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 5.56,
+      "evidence": {
+        "functions_detected": [
+          "main"
+        ],
+        "function_count": 1,
+        "minimum_expected": 2
+      },
+      "feedback": "Few helper functions detected; consider separating logic into reusable functions.",
+      "error": null
+    },
+    "logical": {
+      "status": "ok",
+      "score": 0.0,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": false,
+      "effective_weight": 0.111111,
+      "contribution": 0.0,
+      "evidence": {
+        "passed": 0,
+        "total": 3,
+        "cases": [
+          {
+            "name": "negatives",
+            "input": "-7 3\n",
+            "expected_output": "-4\n",
+            "actual_output": "-1572921448\n",
+            "status": "ok",
+            "passed": false,
+            "stderr": ""
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "expected_output": "0\n",
+            "actual_output": "324255816\n",
+            "status": "ok",
+            "passed": false,
+            "stderr": ""
+          },
+          {
+            "name": "int_overflow",
+            "input": "2147483647 1\n",
+            "expected_output": "-2147483648\n",
+            "actual_output": "892702792\n",
+            "status": "ok",
+            "passed": false,
+            "stderr": ""
+          }
+        ]
+      },
+      "feedback": "Edge cases passed: 0/3.",
+      "error": null
+    },
+    "complexity": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "loop_tokens": 0,
+        "decision_tokens": 0,
+        "estimated_bound": "O(1)",
+        "required_bound": "O(1)",
+        "sizes": [
+          1,
+          10,
+          100
+        ]
+      },
+      "feedback": "Static structural estimate only; not a formal complexity proof or reliable timing curve.",
+      "error": null
+    },
+    "memory_safety": {
+      "status": "ok",
+      "score": 0.0,
+      "weight": 0.1,
+      "threshold": 100,
+      "threshold_met": false,
+      "effective_weight": 0.111111,
+      "contribution": 0.0,
+      "evidence": {
+        "issues_detected": 3,
+        "cases": [
+          {
+            "name": "positive",
+            "input": "2 3\n",
+            "status": "memory_error",
+            "returncode": 1,
+            "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7f4f8a700028 with insufficient space for an object of type 'int'\n0x7f4f8a700028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 6f 8a 4f 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2303==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f4f8a700028 at pc 0x555f5617c31c bp 0x7ffcb9bad180 sp 0x7ffcb9bad178\nREAD of size 4 at 0x7f4f8a700028 thread T0\n    #0 0x555f5617c31b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7f4f8cb5eca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7f4f8cb5ed64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x555f5617c100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7f4f8a700028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x555f5617c1d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7f4f8a6ffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6ffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6ffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6fff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6fff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7f4f8a700000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7f4f8a700080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2303==ABORTING\n"
+          },
+          {
+            "name": "negative",
+            "input": "-4 9\n",
+            "status": "memory_error",
+            "returncode": 1,
+            "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7fcac2900028 with insufficient space for an object of type 'int'\n0x7fcac2900028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 8f c2 ca 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2304==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fcac2900028 at pc 0x564b88d6231c bp 0x7ffd6b6dc150 sp 0x7ffd6b6dc148\nREAD of size 4 at 0x7fcac2900028 thread T0\n    #0 0x564b88d6231b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7fcac4dbbca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7fcac4dbbd64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x564b88d62100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7fcac2900028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x564b88d621d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7fcac28ffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28ffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28ffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28fff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28fff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7fcac2900000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7fcac2900080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2304==ABORTING\n"
+          },
+          {
+            "name": "zero",
+            "input": "0 0\n",
+            "status": "memory_error",
+            "returncode": 1,
+            "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7f9032b00028 with insufficient space for an object of type 'int'\n0x7f9032b00028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 af 32 90 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2305==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f9032b00028 at pc 0x563d9d95931c bp 0x7ffefd7ebb50 sp 0x7ffefd7ebb48\nREAD of size 4 at 0x7f9032b00028 thread T0\n    #0 0x563d9d95931b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7f9035081ca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7f9035081d64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x563d9d959100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7f9032b00028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x563d9d9591d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7f9032affd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032affe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032affe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032afff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032afff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7f9032b00000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7f9032b00080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2305==ABORTING\n"
+          }
+        ]
+      },
+      "feedback": "Detected runtime/sanitizer issues in 3/3 test runs. A clean run is not proof of memory safety.",
+      "error": null
+    },
+    "readability": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.111111,
+      "contribution": 11.11,
+      "evidence": {
+        "line_count": 6,
+        "comment_blocks": 1,
+        "function_like_definitions": 1,
+        "long_lines": 0,
+        "compact_assignment_lines": 0,
+        "method": "deterministic source heuristics"
+      },
+      "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality.",
+      "error": null
+    },
+    "originality": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 15,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": [],
+      "feedback": "No reference submissions supplied.",
+      "error": null
+    }
+  },
+  "flags": [],
+  "errors": [],
+  "compilation": {
+    "status": "ok",
+    "executable_path": "/tmp/autograder_8mnqxa71/submission",
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "/tmp/autograder_norm/tests/inputs/memory_error.c: In function ‘main’:\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: warning: array subscript 2 is above array bounds of ‘int[2]’ [-Warray-bounds=]\n    4 |     printf(\"%d\\n\", values[2]); /* Intentional out-of-bounds read for sanitizer demonstration. */\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~~\n/tmp/autograder_norm/tests/inputs/memory_error.c:3:9: note: while referencing ‘values’\n    3 |     int values[2] = {10, 20};\n      |         ^~~~~~\n",
+    "duration_seconds": 0.033,
+    "error": null,
+    "command": [
+      "/usr/bin/gcc",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11",
+      "/tmp/autograder_norm/tests/inputs/memory_error.c",
+      "-o",
+      "/tmp/autograder_8mnqxa71/submission"
+    ]
+  },
+  "score_calculation": {
+    "overall_score": 50.0,
+    "raw_weighted_score": 50.0,
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "metrics": {
+      "correctness": {
+        "score": 0.0,
+        "threshold": 80,
+        "threshold_met": false,
+        "weight": 0.2,
+        "effective_weight": 0.222222,
+        "contribution": 0.0,
+        "evidence": {
+          "passed": 0,
+          "total": 3,
+          "cases": [
+            {
+              "name": "positive",
+              "input": "2 3\n",
+              "expected_output": "5\n",
+              "actual_output": "363550584\n",
+              "stderr": "",
+              "passed": false,
+              "status": "wrong_answer",
+              "feedback": "Output differs from expected output.",
+              "returncode": 0,
+              "duration_seconds": 0.004
+            },
+            {
+              "name": "negative",
+              "input": "-4 9\n",
+              "expected_output": "5\n",
+              "actual_output": "1862858808\n",
+              "stderr": "",
+              "passed": false,
+              "status": "wrong_answer",
+              "feedback": "Output differs from expected output.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "expected_output": "0\n",
+              "actual_output": "-1059067416\n",
+              "stderr": "",
+              "passed": false,
+              "status": "wrong_answer",
+              "feedback": "Output differs from expected output.",
+              "returncode": 0,
+              "duration_seconds": 0.003
+            }
+          ]
+        },
+        "feedback": "Passed 0/3 test cases."
+      },
+      "syntax": {
+        "score": 100,
+        "threshold": 80,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "warnings": 0,
+          "errors": 0,
+          "diagnostics": "",
+          "command": [
+            "/usr/bin/gcc",
+            "-Wall",
+            "-Wextra",
+            "-std=c11",
+            "-fsyntax-only",
+            "/tmp/autograder_norm/tests/inputs/memory_error.c"
+          ],
+          "configured_flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ],
+          "diagnostic_flags": [
+            "-Wall",
+            "-Wextra",
+            "-std=c11",
+            "-fsyntax-only"
+          ]
+        },
+        "feedback": "0 warning(s), 0 error(s)."
+      },
+      "structure": {
+        "score": 100,
+        "threshold": 60,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "decision_tokens": 0,
+          "max_cyclomatic_threshold": 8,
+          "longest_lexical_chunk_lines": 5,
+          "max_function_length_threshold": 40,
+          "has_include_directive": true
+        },
+        "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser."
+      },
+      "modularity": {
+        "score": 50,
+        "threshold": 50,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 5.56,
+        "evidence": {
+          "functions_detected": [
+            "main"
+          ],
+          "function_count": 1,
+          "minimum_expected": 2
+        },
+        "feedback": "Few helper functions detected; consider separating logic into reusable functions."
+      },
+      "logical": {
+        "score": 0.0,
+        "threshold": 80,
+        "threshold_met": false,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 0.0,
+        "evidence": {
+          "passed": 0,
+          "total": 3,
+          "cases": [
+            {
+              "name": "negatives",
+              "input": "-7 3\n",
+              "expected_output": "-4\n",
+              "actual_output": "-1572921448\n",
+              "status": "ok",
+              "passed": false,
+              "stderr": ""
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "expected_output": "0\n",
+              "actual_output": "324255816\n",
+              "status": "ok",
+              "passed": false,
+              "stderr": ""
+            },
+            {
+              "name": "int_overflow",
+              "input": "2147483647 1\n",
+              "expected_output": "-2147483648\n",
+              "actual_output": "892702792\n",
+              "status": "ok",
+              "passed": false,
+              "stderr": ""
+            }
+          ]
+        },
+        "feedback": "Edge cases passed: 0/3."
+      },
+      "complexity": {
+        "score": 100,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "loop_tokens": 0,
+          "decision_tokens": 0,
+          "estimated_bound": "O(1)",
+          "required_bound": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "feedback": "Static structural estimate only; not a formal complexity proof or reliable timing curve."
+      },
+      "memory_safety": {
+        "score": 0.0,
+        "threshold": 100,
+        "threshold_met": false,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 0.0,
+        "evidence": {
+          "issues_detected": 3,
+          "cases": [
+            {
+              "name": "positive",
+              "input": "2 3\n",
+              "status": "memory_error",
+              "returncode": 1,
+              "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7f4f8a700028 with insufficient space for an object of type 'int'\n0x7f4f8a700028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 6f 8a 4f 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2303==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f4f8a700028 at pc 0x555f5617c31c bp 0x7ffcb9bad180 sp 0x7ffcb9bad178\nREAD of size 4 at 0x7f4f8a700028 thread T0\n    #0 0x555f5617c31b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7f4f8cb5eca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7f4f8cb5ed64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x555f5617c100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7f4f8a700028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x555f5617c1d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7f4f8a6ffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6ffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6ffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6fff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a6fff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7f4f8a700000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7f4f8a700080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f4f8a700280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2303==ABORTING\n"
+            },
+            {
+              "name": "negative",
+              "input": "-4 9\n",
+              "status": "memory_error",
+              "returncode": 1,
+              "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7fcac2900028 with insufficient space for an object of type 'int'\n0x7fcac2900028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 8f c2 ca 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2304==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fcac2900028 at pc 0x564b88d6231c bp 0x7ffd6b6dc150 sp 0x7ffd6b6dc148\nREAD of size 4 at 0x7fcac2900028 thread T0\n    #0 0x564b88d6231b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7fcac4dbbca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7fcac4dbbd64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x564b88d62100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7fcac2900028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x564b88d621d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7fcac28ffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28ffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28ffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28fff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac28fff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7fcac2900000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7fcac2900080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7fcac2900280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2304==ABORTING\n"
+            },
+            {
+              "name": "zero",
+              "input": "0 0\n",
+              "status": "memory_error",
+              "returncode": 1,
+              "diagnostic": "type 'int [2]'\n/tmp/autograder_norm/tests/inputs/memory_error.c:4:5: runtime error: load of address 0x7f9032b00028 with insufficient space for an object of type 'int'\n0x7f9032b00028: note: pointer points here\n 14 00 00 00  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  00 80 af 32 90 7f 00 00  00 00 00 00\n              ^ \n=================================================================\n==2305==ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7f9032b00028 at pc 0x563d9d95931c bp 0x7ffefd7ebb50 sp 0x7ffefd7ebb48\nREAD of size 4 at 0x7f9032b00028 thread T0\n    #0 0x563d9d95931b in main /tmp/autograder_norm/tests/inputs/memory_error.c:4\n    #1 0x7f9035081ca7  (/lib/x86_64-linux-gnu/libc.so.6+0x29ca7) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #2 0x7f9035081d64 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29d64) (BuildId: c495b62edadd6c356265942ec1282d98058a7b41)\n    #3 0x563d9d959100 in _start (/tmp/autograder_asan_t_jzd85c/instrumented+0x1100) (BuildId: 0ce66274aea20713e6c660223887e377820bd319)\n\nAddress 0x7f9032b00028 is located in stack of thread T0 at offset 40 in frame\n    #0 0x563d9d9591d8 in main /tmp/autograder_norm/tests/inputs/memory_error.c:2\n\n  This frame has 1 object(s):\n    [32, 40) 'values' (line 3) <== Memory access at offset 40 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow /tmp/autograder_norm/tests/inputs/memory_error.c:4 in main\nShadow bytes around the buggy address:\n  0x7f9032affd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032affe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032affe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032afff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032afff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x7f9032b00000: f1 f1 f1 f1 00[f3]f3 f3 00 00 00 00 00 00 00 00\n  0x7f9032b00080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00100: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x7f9032b00280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2305==ABORTING\n"
+            }
+          ]
+        },
+        "feedback": "Detected runtime/sanitizer issues in 3/3 test runs. A clean run is not proof of memory safety."
+      },
+      "readability": {
+        "score": 100,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.111111,
+        "contribution": 11.11,
+        "evidence": {
+          "line_count": 6,
+          "comment_blocks": 1,
+          "function_like_definitions": 1,
+          "long_lines": 0,
+          "compact_assignment_lines": 0,
+          "method": "deterministic source heuristics"
+        },
+        "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality."
+      }
+    },
+    "skipped_metrics": [
+      {
+        "name": "originality",
+        "weight": 0.1,
+        "reason": "No reference submissions supplied.",
+        "status": "skipped"
+      }
+    ],
+    "original_active_weight": 1.0,
+    "scoreable_weight": 0.9,
+    "score_cap": null,
+    "cap_applied": false,
+    "cap_reason": null
+  },
+  "score_summary": {
+    "raw_weighted_score": 50.0,
+    "final_score": 50.0,
+    "score_cap": null,
+    "cap_applied": false,
+    "cap_reason": null
+  },
+  "test_cases_total": 3,
+  "rules_file": "/tmp/autograder_norm/rules/rules.json",
+  "rules": {
+    "version": 2,
+    "problem": "add_two_integers",
+    "time_limit_s": 1,
+    "memory_limit_mb": 64,
+    "compile_flags": [
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11"
+    ],
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "grading_policy": {
+      "all_correctness_tests_fail": {
+        "enabled": true,
+        "trigger_statuses": [
+          "timeout",
+          "crash",
+          "execution_error"
+        ],
+        "score_cap": 20
+      },
+      "compile_failure_score": 0
+    },
+    "metrics": {
+      "correctness": {
+        "enabled": true,
+        "analyzer": "io_tests",
+        "weight": 0.2,
+        "params": {
+          "testset_dir": "tests/add/"
+        },
+        "threshold": 80
+      },
+      "syntax": {
+        "enabled": true,
+        "analyzer": "compiler_warnings",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ]
+        },
+        "threshold": 80
+      },
+      "structure": {
+        "enabled": true,
+        "analyzer": "static_analysis",
+        "weight": 0.1,
+        "params": {
+          "max_cyclomatic": 8,
+          "max_function_length": 40
+        },
+        "threshold": 60
+      },
+      "modularity": {
+        "enabled": true,
+        "analyzer": "function_split",
+        "weight": 0.1,
+        "params": {
+          "expect_helpers": true,
+          "min_functions": 2
+        },
+        "threshold": 50
+      },
+      "logical": {
+        "enabled": true,
+        "analyzer": "edge_case_runner",
+        "weight": 0.1,
+        "params": {
+          "problem": "add_two_integers",
+          "cases": [
+            "negatives",
+            "zero",
+            "int_overflow"
+          ]
+        },
+        "threshold": 80
+      },
+      "complexity": {
+        "enabled": true,
+        "analyzer": "complexity_estimator",
+        "weight": 0.1,
+        "params": {
+          "required": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "threshold": 70
+      },
+      "memory_safety": {
+        "enabled": true,
+        "analyzer": "sanitizer_run",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-fsanitize=address,undefined"
+          ]
+        },
+        "threshold": 100
+      },
+      "readability": {
+        "enabled": true,
+        "analyzer": "readability_review",
+        "weight": 0.1,
+        "params": {
+          "provider": "deterministic_heuristic",
+          "temperature": 0,
+          "seed": 42
+        },
+        "threshold": 70
+      },
+      "originality": {
+        "enabled": true,
+        "analyzer": "similarity_flag",
+        "weight": 0.1,
+        "params": {
+          "corpus_dir": "submissions/",
+          "flag_threshold": 0.85
+        },
+        "threshold": 15
+      }
+    }
+  },
+  "tool_versions": {
+    "python": "3.13.5",
+    "gcc": "/usr/bin/gcc"
+  },
+  "usefulness_limitations": {
+    "usefulness": [
+      {
+        "use_case": "Large programming courses",
+        "example": "Apply one test suite and rubric to hundreds of submissions.",
+        "benefit": "Consistent, repeatable grading and faster feedback."
+      },
+      {
+        "use_case": "Introductory programming feedback",
+        "example": "Show an input that causes a wrong answer with expected and actual output.",
+        "benefit": "Students can reproduce and debug failures."
+      },
+      {
+        "use_case": "Code-quality screening",
+        "example": "Report warning, structure, modularity and readability indicators.",
+        "benefit": "Instructor can assess more than output correctness."
+      },
+      {
+        "use_case": "Originality triage",
+        "example": "Flag submissions above a configurable source similarity threshold.",
+        "benefit": "Focus human review on candidate pairs; does not prove copying."
+      }
+    ],
+    "limitations": [
+      {
+        "limitation": "Finite tests do not prove correctness",
+        "example": "A program passes supplied tests but fails an untested extreme input."
+      },
+      {
+        "limitation": "Sanitizers only detect executed defects",
+        "example": "An invalid access exists in a branch none of the supplied inputs reach."
+      },
+      {
+        "limitation": "Similarity can have false positives and negatives",
+        "example": "A short mandated solution looks similar, or copied code is heavily refactored."
+      },
+      {
+        "limitation": "Heuristic source analyzers can misestimate properties",
+        "example": "A loop bound depends on input in a way the lexical estimator does not recognize."
+      }
+    ]
+  },
+  "limitations": [
+    "POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.",
+    "Sanitizers detect only errors triggered by supplied test inputs.",
+    "Complexity, structure, readability and similarity are heuristic.",
+    "A similarity flag is not proof of plagiarism or LLM use."
+  ],
+  "generated_at_utc": "2026-10-31T05:39:08.270191+00:00"
+}

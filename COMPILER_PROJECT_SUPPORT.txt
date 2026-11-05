@@ -1,0 +1,2 @@
+This project is now a general-purpose C AutoGrader, not a compiler-assignment-specific grader.
+Multi-file project ZIP support includes ordinary nested C projects and optional Flex/Bison auto-detection. See UNIVERSAL_AUTOGRADER_UPDATE.md for supported build configurations and test-case format.

@@ -1,0 +1,16 @@
+AutoGrader hotfix — 2026-11-04
+
+Fixed:
+- Removed the last stale reference to the deleted problem_choice UI state.
+- The Test suite tab and grading readiness logic are now independent of built-in templates.
+- Correctness remains gated on assignment-specific trusted test cases.
+
+Validation:
+- app.py Python compilation: passed.
+- unittest discovery: 26 tests passed; 1 ASan-dependent test skipped because the host GCC ASan runtime is incompatible.
+- Interactive Streamlit browser launch was not performed in this environment.
+
+Install:
+1. Back up your current project folder.
+2. Replace it with this folder from the ZIP.
+3. In WSL, activate your existing virtual environment and run: streamlit run app.py

@@ -1,0 +1,472 @@
+{
+  "source_file": "/tmp/autograder_norm/tests/inputs/compile_error.c",
+  "source_sha256": "4056cf90ea1477aecbd4dc751c432853b7e256160843fdd8fc821f96e4862e06",
+  "rules_sha256": "3f9ea13d420945a4df5319b755167178ec7a0875a8f399ae8da660f71a2eab44",
+  "overall_score": 0.0,
+  "grade_status": "compile_failure",
+  "first_pass": {
+    "compiled": false,
+    "smoke_ok": false,
+    "suspected_infinite_loop": false,
+    "static_sanity": null
+  },
+  "metrics": {
+    "correctness": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.2,
+      "threshold": 80,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "Compilation failed; execution analyzer not run.",
+      "error": null
+    },
+    "syntax": {
+      "status": "error",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": {
+        "warnings": 0,
+        "errors": 2,
+        "diagnostics": "/tmp/autograder_norm/tests/inputs/compile_error.c: In function ‘main’:\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:18: error: unknown type name ‘this’\n    1 | int main(void) { this is invalid C; }\n      |                  ^~~~\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘invalid’\n    1 | int main(void) { this is invalid C; }\n      |                          ^~~~~~~",
+        "command": [
+          "/usr/bin/gcc",
+          "-Wall",
+          "-Wextra",
+          "-std=c11",
+          "-fsyntax-only",
+          "/tmp/autograder_norm/tests/inputs/compile_error.c"
+        ]
+      },
+      "feedback": "Compiler diagnostics contain errors.",
+      "error": "syntax_error"
+    },
+    "structure": {
+      "status": "ok",
+      "score": 100,
+      "weight": 0.1,
+      "threshold": 60,
+      "threshold_met": true,
+      "effective_weight": 0.333333,
+      "contribution": 33.33,
+      "evidence": {
+        "decision_tokens": 0,
+        "max_cyclomatic_threshold": 8,
+        "longest_lexical_chunk_lines": 1,
+        "max_function_length_threshold": 40,
+        "has_include_directive": false
+      },
+      "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser.",
+      "error": null
+    },
+    "modularity": {
+      "status": "ok",
+      "score": 50,
+      "weight": 0.1,
+      "threshold": 50,
+      "threshold_met": true,
+      "effective_weight": 0.333333,
+      "contribution": 16.67,
+      "evidence": {
+        "functions_detected": [
+          "main"
+        ],
+        "function_count": 1,
+        "minimum_expected": 2
+      },
+      "feedback": "Few helper functions detected; consider separating logic into reusable functions.",
+      "error": null
+    },
+    "logical": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 80,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "Compilation failed; execution analyzer not run.",
+      "error": null
+    },
+    "complexity": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "Compilation failed; execution analyzer not run.",
+      "error": null
+    },
+    "memory_safety": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 100,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": null,
+      "feedback": "Compilation failed; execution analyzer not run.",
+      "error": null
+    },
+    "readability": {
+      "status": "ok",
+      "score": 85,
+      "weight": 0.1,
+      "threshold": 70,
+      "threshold_met": true,
+      "effective_weight": 0.333333,
+      "contribution": 28.33,
+      "evidence": {
+        "line_count": 1,
+        "comment_blocks": 0,
+        "function_like_definitions": 1,
+        "long_lines": 0,
+        "compact_assignment_lines": 0,
+        "method": "deterministic source heuristics"
+      },
+      "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality.",
+      "error": null
+    },
+    "originality": {
+      "status": "skipped",
+      "score": null,
+      "weight": 0.1,
+      "threshold": 15,
+      "threshold_met": null,
+      "effective_weight": 0,
+      "contribution": null,
+      "evidence": [],
+      "feedback": "No reference submissions supplied.",
+      "error": null
+    }
+  },
+  "flags": [],
+  "errors": [
+    "Compilation failed",
+    "/tmp/autograder_norm/tests/inputs/compile_error.c: In function ‘main’:\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:18: error: unknown type name ‘this’\n    1 | int main(void) { this is invalid C; }\n      |                  ^~~~\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘invalid’\n    1 | int main(void) { this is invalid C; }\n      |                          ^~~~~~~\n",
+    "syntax: Compiler diagnostics contain errors."
+  ],
+  "compilation": {
+    "status": "error",
+    "executable_path": null,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "/tmp/autograder_norm/tests/inputs/compile_error.c: In function ‘main’:\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:18: error: unknown type name ‘this’\n    1 | int main(void) { this is invalid C; }\n      |                  ^~~~\n/tmp/autograder_norm/tests/inputs/compile_error.c:1:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘invalid’\n    1 | int main(void) { this is invalid C; }\n      |                          ^~~~~~~\n",
+    "duration_seconds": 0.008,
+    "error": "compile_failed",
+    "command": [
+      "/usr/bin/gcc",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11",
+      "/tmp/autograder_norm/tests/inputs/compile_error.c",
+      "-o",
+      "/tmp/autograder_45c1_zrp/submission"
+    ]
+  },
+  "score_calculation": {
+    "overall_score": 0.0,
+    "raw_weighted_score": 78.33,
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "metrics": {
+      "structure": {
+        "score": 100,
+        "threshold": 60,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.333333,
+        "contribution": 33.33,
+        "evidence": {
+          "decision_tokens": 0,
+          "max_cyclomatic_threshold": 8,
+          "longest_lexical_chunk_lines": 1,
+          "max_function_length_threshold": 40,
+          "has_include_directive": false
+        },
+        "feedback": "Source structure metrics are lexical approximations; they do not replace a full C parser."
+      },
+      "modularity": {
+        "score": 50,
+        "threshold": 50,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.333333,
+        "contribution": 16.67,
+        "evidence": {
+          "functions_detected": [
+            "main"
+          ],
+          "function_count": 1,
+          "minimum_expected": 2
+        },
+        "feedback": "Few helper functions detected; consider separating logic into reusable functions."
+      },
+      "readability": {
+        "score": 85,
+        "threshold": 70,
+        "threshold_met": true,
+        "weight": 0.1,
+        "effective_weight": 0.333333,
+        "contribution": 28.33,
+        "evidence": {
+          "line_count": 1,
+          "comment_blocks": 0,
+          "function_like_definitions": 1,
+          "long_lines": 0,
+          "compact_assignment_lines": 0,
+          "method": "deterministic source heuristics"
+        },
+        "feedback": "Readability score is a deterministic heuristic, not an LLM judgment or proof of code quality."
+      }
+    },
+    "skipped_metrics": [
+      {
+        "name": "correctness",
+        "weight": 0.2,
+        "reason": "Compilation failed; execution analyzer not run.",
+        "status": "skipped"
+      },
+      {
+        "name": "syntax",
+        "weight": 0.1,
+        "reason": "Compiler diagnostics contain errors.",
+        "status": "error"
+      },
+      {
+        "name": "logical",
+        "weight": 0.1,
+        "reason": "Compilation failed; execution analyzer not run.",
+        "status": "skipped"
+      },
+      {
+        "name": "complexity",
+        "weight": 0.1,
+        "reason": "Compilation failed; execution analyzer not run.",
+        "status": "skipped"
+      },
+      {
+        "name": "memory_safety",
+        "weight": 0.1,
+        "reason": "Compilation failed; execution analyzer not run.",
+        "status": "skipped"
+      },
+      {
+        "name": "originality",
+        "weight": 0.1,
+        "reason": "No reference submissions supplied.",
+        "status": "skipped"
+      }
+    ],
+    "original_active_weight": 1.0,
+    "scoreable_weight": 0.3,
+    "score_cap": 0.0,
+    "cap_applied": true,
+    "cap_reason": "Submission did not compile; source-only metrics are reported as diagnostic evidence."
+  },
+  "score_summary": {
+    "raw_weighted_score": 78.33,
+    "final_score": 0.0,
+    "score_cap": 0.0,
+    "cap_applied": true,
+    "cap_reason": "Submission did not compile; source-only metrics are reported as diagnostic evidence."
+  },
+  "test_cases_total": 3,
+  "rules_file": "/tmp/autograder_norm/rules/rules.json",
+  "rules": {
+    "version": 2,
+    "problem": "add_two_integers",
+    "time_limit_s": 1,
+    "memory_limit_mb": 64,
+    "compile_flags": [
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-std=c11"
+    ],
+    "score_scale": 100,
+    "missing_metric_policy": "renormalize_skipped",
+    "grading_policy": {
+      "all_correctness_tests_fail": {
+        "enabled": true,
+        "trigger_statuses": [
+          "timeout",
+          "crash",
+          "execution_error"
+        ],
+        "score_cap": 20
+      },
+      "compile_failure_score": 0
+    },
+    "metrics": {
+      "correctness": {
+        "enabled": true,
+        "analyzer": "io_tests",
+        "weight": 0.2,
+        "params": {
+          "testset_dir": "tests/add/"
+        },
+        "threshold": 80
+      },
+      "syntax": {
+        "enabled": true,
+        "analyzer": "compiler_warnings",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-std=c11"
+          ]
+        },
+        "threshold": 80
+      },
+      "structure": {
+        "enabled": true,
+        "analyzer": "static_analysis",
+        "weight": 0.1,
+        "params": {
+          "max_cyclomatic": 8,
+          "max_function_length": 40
+        },
+        "threshold": 60
+      },
+      "modularity": {
+        "enabled": true,
+        "analyzer": "function_split",
+        "weight": 0.1,
+        "params": {
+          "expect_helpers": true,
+          "min_functions": 2
+        },
+        "threshold": 50
+      },
+      "logical": {
+        "enabled": true,
+        "analyzer": "edge_case_runner",
+        "weight": 0.1,
+        "params": {
+          "problem": "add_two_integers",
+          "cases": [
+            "negatives",
+            "zero",
+            "int_overflow"
+          ]
+        },
+        "threshold": 80
+      },
+      "complexity": {
+        "enabled": true,
+        "analyzer": "complexity_estimator",
+        "weight": 0.1,
+        "params": {
+          "required": "O(1)",
+          "sizes": [
+            1,
+            10,
+            100
+          ]
+        },
+        "threshold": 70
+      },
+      "memory_safety": {
+        "enabled": true,
+        "analyzer": "sanitizer_run",
+        "weight": 0.1,
+        "params": {
+          "flags": [
+            "-fsanitize=address,undefined"
+          ]
+        },
+        "threshold": 100
+      },
+      "readability": {
+        "enabled": true,
+        "analyzer": "readability_review",
+        "weight": 0.1,
+        "params": {
+          "provider": "deterministic_heuristic",
+          "temperature": 0,
+          "seed": 42
+        },
+        "threshold": 70
+      },
+      "originality": {
+        "enabled": true,
+        "analyzer": "similarity_flag",
+        "weight": 0.1,
+        "params": {
+          "corpus_dir": "submissions/",
+          "flag_threshold": 0.85
+        },
+        "threshold": 15
+      }
+    }
+  },
+  "tool_versions": {
+    "python": "3.13.5",
+    "gcc": "/usr/bin/gcc"
+  },
+  "usefulness_limitations": {
+    "usefulness": [
+      {
+        "use_case": "Large programming courses",
+        "example": "Apply one test suite and rubric to hundreds of submissions.",
+        "benefit": "Consistent, repeatable grading and faster feedback."
+      },
+      {
+        "use_case": "Introductory programming feedback",
+        "example": "Show an input that causes a wrong answer with expected and actual output.",
+        "benefit": "Students can reproduce and debug failures."
+      },
+      {
+        "use_case": "Code-quality screening",
+        "example": "Report warning, structure, modularity and readability indicators.",
+        "benefit": "Instructor can assess more than output correctness."
+      },
+      {
+        "use_case": "Originality triage",
+        "example": "Flag submissions above a configurable source similarity threshold.",
+        "benefit": "Focus human review on candidate pairs; does not prove copying."
+      }
+    ],
+    "limitations": [
+      {
+        "limitation": "Finite tests do not prove correctness",
+        "example": "A program passes supplied tests but fails an untested extreme input."
+      },
+      {
+        "limitation": "Sanitizers only detect executed defects",
+        "example": "An invalid access exists in a branch none of the supplied inputs reach."
+      },
+      {
+        "limitation": "Similarity can have false positives and negatives",
+        "example": "A short mandated solution looks similar, or copied code is heavily refactored."
+      },
+      {
+        "limitation": "Heuristic source analyzers can misestimate properties",
+        "example": "A loop bound depends on input in a way the lexical estimator does not recognize."
+      }
+    ]
+  },
+  "limitations": [
+    "POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.",
+    "Sanitizers detect only errors triggered by supplied test inputs.",
+    "Complexity, structure, readability and similarity are heuristic.",
+    "A similarity flag is not proof of plagiarism or LLM use."
+  ],
+  "generated_at_utc": "2026-10-31T05:39:07.369768+00:00"
+}

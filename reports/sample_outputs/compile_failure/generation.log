@@ -1,0 +1,17 @@
+COMMAND: /opt/pyvenv/bin/python3 -m src.main --source /mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c --tests /mnt/data/AutoGrader_Final_Submission/tests/sample_cases.json --rules /mnt/data/AutoGrader_Final_Submission/rules/rules.json --output-dir /mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/compile_failure
+EXIT: 0
+STDOUT:
+{
+  "overall_score": 0.0,
+  "report_paths": {
+    "json": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/compile_failure/grade_report.json",
+    "text": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/compile_failure/grade_report.txt"
+  },
+  "errors": [
+    "Compilation failed",
+    "/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c: In function \u2018main\u2019:\n/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c:1:18: error: unknown type name \u2018this\u2019\n    1 | int main(void) { this is invalid C; }\n      |                  ^~~~\n/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c:1:26: error: expected \u2018=\u2019, \u2018,\u2019, \u2018;\u2019, \u2018asm\u2019 or \u2018__attribute__\u2019 before \u2018invalid\u2019\n    1 | int main(void) { this is invalid C; }\n      |                          ^~~~~~~\n",
+    "syntax: No source file could be analyzed."
+  ]
+}
+
+STDERR:

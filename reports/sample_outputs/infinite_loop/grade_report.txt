@@ -1,0 +1,73 @@
+AUTOGRADER REPORT
+==================================================
+Source: /mnt/data/AutoGrader_Final_Submission/tests/inputs/infinite_loop.c
+Overall score: 20.0/100
+Grade status: execution_blocked
+
+SCORING SUMMARY
+--------------------------------------------------
+Raw weighted score: 85.56/100
+Final score: 20.0/100
+Score cap: 20.0
+Cap applied: True
+Cap reason: First-pass smoke test failed with status 'timeout'; functional correctness could not be verified.
+
+FIRST-PASS CHECK
+--------------------------------------------------
+Compiled: True
+Smoke test: timeout
+Suspected infinite loop: True
+  main_present: True
+  reader_present: False
+  writer_present: False
+  return_present: True
+
+METRICS
+--------------------------------------------------
+correctness: None (weight=0.25, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+syntax: 100.0 (weight=0.15, effective_weight=0.333333, contribution=33.33, threshold=80, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+structure: 100.0 (weight=0.1, effective_weight=0.222222, contribution=22.22, threshold=60, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+modularity: 50.0 (weight=0.1, effective_weight=0.222222, contribution=11.11, threshold=50, threshold_met=True)
+  Analyzed 1 source file(s); mean score 50.00.
+logical: None (weight=0.0, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  Metric disabled by rules.
+complexity: None (weight=0.1, effective_weight=0, contribution=None, threshold=70, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+memory_safety: None (weight=0.1, effective_weight=0, contribution=None, threshold=100, threshold_met=None)
+  First-pass smoke test failed; execution analyzer skipped.
+readability: 85.0 (weight=0.1, effective_weight=0.222222, contribution=18.89, threshold=70, threshold_met=True)
+  Analyzed 1 source file(s); mean score 85.00.
+originality: None (weight=0.1, effective_weight=0, contribution=None, threshold=15, threshold_met=None)
+  No reference submissions supplied.
+
+FLAGS FOR REVIEW
+--------------------------------------------------
+{'type': 'suspected_infinite_loop', 'evidence': 'First-pass smoke test timed out.', 'note': 'Correctness tests were not run. Score is limited by the configured first-pass failure cap.'}
+
+USEFULNESS IN REAL-LIFE SETTINGS
+--------------------------------------------------
+- Large programming courses: Apply one test suite and rubric to hundreds of submissions.
+  Benefit: Consistent, repeatable grading and faster feedback.
+- Introductory programming feedback: Show an input that causes a wrong answer with expected and actual output.
+  Benefit: Students can reproduce and debug failures.
+- Code-quality screening: Report warning, structure, modularity and readability indicators.
+  Benefit: Instructor can assess more than output correctness.
+- Originality triage: Flag submissions above a configurable source similarity threshold.
+  Benefit: Focus human review on candidate pairs; does not prove copying.
+
+CONCRETE LIMITATIONS
+--------------------------------------------------
+- Finite tests do not prove correctness: A program passes supplied tests but fails an untested extreme input.
+- Sanitizers only detect executed defects: An invalid access exists in a branch none of the supplied inputs reach.
+- Similarity can have false positives and negatives: A short mandated solution looks similar, or copied code is heavily refactored.
+- Heuristic source analyzers can misestimate properties: A loop bound depends on input in a way the lexical estimator does not recognize.
+
+LIMITATIONS
+--------------------------------------------------
+- POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.
+- Sanitizers detect only errors triggered by supplied test inputs.
+- Complexity, structure, readability and similarity are heuristic.
+- A similarity flag is not proof of plagiarism or LLM use.

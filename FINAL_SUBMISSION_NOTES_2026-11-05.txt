@@ -1,0 +1,18 @@
+FINAL SUBMISSION NOTES — 2026-11-05
+==================================
+
+Final audit improvements:
+- First-pass smoke execution mirrors the first trusted test case stdin, argv and staged files.
+- Output-limit termination is included in first-pass failure statuses that trigger the configured score cap.
+- Regression tests cover both behaviors.
+- README includes final validation and a pre-submission UI checklist.
+
+Validation in packaging environment:
+- Python compileall passed.
+- 28 unit/integration tests passed.
+- Five representative reports regenerated: correct, wrong-answer, compile-failure, infinite-loop and memory-error.
+- Streamlit browser launch was NOT performed here because Streamlit is not installed in this packaging environment. Verify it in your WSL virtual environment.
+
+Do not claim the runner is a complete sandbox, finite tests prove correctness, similarity proves plagiarism/LLM authorship, or heuristic complexity analysis is formal proof. Arbitrary-program correctness needs trusted assignment-specific expected outputs or a reference oracle.
+
+Before submission: launch `streamlit run app.py`, import your actual assignment test suite, verify correct/wrong/compile-error/infinite-loop examples, export reports and record the demo.

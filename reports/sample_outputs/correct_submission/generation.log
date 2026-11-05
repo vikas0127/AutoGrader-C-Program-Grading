@@ -1,0 +1,13 @@
+COMMAND: /opt/pyvenv/bin/python3 -m src.main --source /mnt/data/AutoGrader_Final_Submission/tests/inputs/assignment_sample_add.c --tests /mnt/data/AutoGrader_Final_Submission/tests/sample_cases.json --rules /mnt/data/AutoGrader_Final_Submission/rules/rules.json --output-dir /mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/correct_submission
+EXIT: 0
+STDOUT:
+{
+  "overall_score": 92.78,
+  "report_paths": {
+    "json": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/correct_submission/grade_report.json",
+    "text": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/correct_submission/grade_report.txt"
+  },
+  "errors": []
+}
+
+STDERR:

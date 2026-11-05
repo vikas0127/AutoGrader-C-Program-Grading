@@ -1,0 +1,78 @@
+AUTOGRADER REPORT
+==================================================
+Source: /mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c
+Overall score: 0.0/100
+Grade status: compile_failure
+
+SCORING SUMMARY
+--------------------------------------------------
+Raw weighted score: 78.33/100
+Final score: 0.0/100
+Score cap: 0.0
+Cap applied: True
+Cap reason: Submission did not compile; source-only metrics are reported as diagnostic evidence.
+
+FIRST-PASS CHECK
+--------------------------------------------------
+Compiled: False
+Smoke test: None
+Suspected infinite loop: False
+
+METRICS
+--------------------------------------------------
+correctness: None (weight=0.25, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  Compilation failed; execution analyzer not run.
+syntax: None (weight=0.15, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  No source file could be analyzed.
+structure: 100.0 (weight=0.1, effective_weight=0.333333, contribution=33.33, threshold=60, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+modularity: 50.0 (weight=0.1, effective_weight=0.333333, contribution=16.67, threshold=50, threshold_met=True)
+  Analyzed 1 source file(s); mean score 50.00.
+logical: None (weight=0.0, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  Metric disabled by rules.
+complexity: None (weight=0.1, effective_weight=0, contribution=None, threshold=70, threshold_met=None)
+  Compilation failed; execution analyzer not run.
+memory_safety: None (weight=0.1, effective_weight=0, contribution=None, threshold=100, threshold_met=None)
+  Compilation failed; execution analyzer not run.
+readability: 85.0 (weight=0.1, effective_weight=0.333333, contribution=28.33, threshold=70, threshold_met=True)
+  Analyzed 1 source file(s); mean score 85.00.
+originality: None (weight=0.1, effective_weight=0, contribution=None, threshold=15, threshold_met=None)
+  No reference submissions supplied.
+
+ERRORS
+--------------------------------------------------
+Compilation failed
+/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c: In function ‘main’:
+/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c:1:18: error: unknown type name ‘this’
+    1 | int main(void) { this is invalid C; }
+      |                  ^~~~
+/mnt/data/AutoGrader_Final_Submission/tests/inputs/compile_error.c:1:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘invalid’
+    1 | int main(void) { this is invalid C; }
+      |                          ^~~~~~~
+
+syntax: No source file could be analyzed.
+
+USEFULNESS IN REAL-LIFE SETTINGS
+--------------------------------------------------
+- Large programming courses: Apply one test suite and rubric to hundreds of submissions.
+  Benefit: Consistent, repeatable grading and faster feedback.
+- Introductory programming feedback: Show an input that causes a wrong answer with expected and actual output.
+  Benefit: Students can reproduce and debug failures.
+- Code-quality screening: Report warning, structure, modularity and readability indicators.
+  Benefit: Instructor can assess more than output correctness.
+- Originality triage: Flag submissions above a configurable source similarity threshold.
+  Benefit: Focus human review on candidate pairs; does not prove copying.
+
+CONCRETE LIMITATIONS
+--------------------------------------------------
+- Finite tests do not prove correctness: A program passes supplied tests but fails an untested extreme input.
+- Sanitizers only detect executed defects: An invalid access exists in a branch none of the supplied inputs reach.
+- Similarity can have false positives and negatives: A short mandated solution looks similar, or copied code is heavily refactored.
+- Heuristic source analyzers can misestimate properties: A loop bound depends on input in a way the lexical estimator does not recognize.
+
+LIMITATIONS
+--------------------------------------------------
+- POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.
+- Sanitizers detect only errors triggered by supplied test inputs.
+- Complexity, structure, readability and similarity are heuristic.
+- A similarity flag is not proof of plagiarism or LLM use.

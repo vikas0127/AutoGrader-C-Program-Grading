@@ -1,0 +1,86 @@
+AUTOGRADER REPORT
+==================================================
+Source: /mnt/data/AutoGrader_Final_Submission/tests/inputs/memory_error.c
+Overall score: 55.56/100
+Grade status: complete
+
+SCORING SUMMARY
+--------------------------------------------------
+Raw weighted score: 55.56/100
+Final score: 55.56/100
+Score cap: None
+Cap applied: False
+
+FIRST-PASS CHECK
+--------------------------------------------------
+Compiled: True
+Smoke test: ok
+Suspected infinite loop: False
+  main_present: True
+  reader_present: False
+  writer_present: True
+  return_present: True
+
+METRICS
+--------------------------------------------------
+correctness: 0.0 (weight=0.25, effective_weight=0.277778, contribution=0.0, threshold=80, threshold_met=False)
+  Passed 0/3 test cases.
+  Failing case: positive
+    Status: wrong_answer
+    Input: '2 3\n'
+    Expected: '5\n'
+    Actual: '479605016\n'
+    Reason: Standard output differs.
+  Failing case: negative
+    Status: wrong_answer
+    Input: '-4 9\n'
+    Expected: '5\n'
+    Actual: '1567955176\n'
+    Reason: Standard output differs.
+  Failing case: zero
+    Status: wrong_answer
+    Input: '0 0\n'
+    Expected: '0\n'
+    Actual: '-717259448\n'
+    Reason: Standard output differs.
+syntax: 100.0 (weight=0.15, effective_weight=0.166667, contribution=16.67, threshold=80, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+structure: 100.0 (weight=0.1, effective_weight=0.111111, contribution=11.11, threshold=60, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+modularity: 50.0 (weight=0.1, effective_weight=0.111111, contribution=5.56, threshold=50, threshold_met=True)
+  Analyzed 1 source file(s); mean score 50.00.
+logical: None (weight=0.0, effective_weight=0, contribution=None, threshold=80, threshold_met=None)
+  Metric disabled by rules.
+complexity: 100.0 (weight=0.1, effective_weight=0.111111, contribution=11.11, threshold=70, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+memory_safety: 0.0 (weight=0.1, effective_weight=0.111111, contribution=0.0, threshold=100, threshold_met=False)
+  Detected runtime/sanitizer issues in 3/3 test runs. A clean run is not proof of memory safety.
+readability: 100.0 (weight=0.1, effective_weight=0.111111, contribution=11.11, threshold=70, threshold_met=True)
+  Analyzed 1 source file(s); mean score 100.00.
+originality: None (weight=0.1, effective_weight=0, contribution=None, threshold=15, threshold_met=None)
+  No reference submissions supplied.
+
+USEFULNESS IN REAL-LIFE SETTINGS
+--------------------------------------------------
+- Large programming courses: Apply one test suite and rubric to hundreds of submissions.
+  Benefit: Consistent, repeatable grading and faster feedback.
+- Introductory programming feedback: Show an input that causes a wrong answer with expected and actual output.
+  Benefit: Students can reproduce and debug failures.
+- Code-quality screening: Report warning, structure, modularity and readability indicators.
+  Benefit: Instructor can assess more than output correctness.
+- Originality triage: Flag submissions above a configurable source similarity threshold.
+  Benefit: Focus human review on candidate pairs; does not prove copying.
+
+CONCRETE LIMITATIONS
+--------------------------------------------------
+- Finite tests do not prove correctness: A program passes supplied tests but fails an untested extreme input.
+- Sanitizers only detect executed defects: An invalid access exists in a branch none of the supplied inputs reach.
+- Similarity can have false positives and negatives: A short mandated solution looks similar, or copied code is heavily refactored.
+- Heuristic source analyzers can misestimate properties: A loop bound depends on input in a way the lexical estimator does not recognize.
+
+LIMITATIONS
+--------------------------------------------------
+- POSIX resource limits are not a complete security sandbox; use a disposable lab container/VM for untrusted code.
+- Sanitizers detect only errors triggered by supplied test inputs.
+- Complexity, structure, readability and similarity are heuristic.
+- A similarity flag is not proof of plagiarism or LLM use.

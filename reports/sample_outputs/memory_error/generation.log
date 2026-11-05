@@ -1,0 +1,13 @@
+COMMAND: /opt/pyvenv/bin/python3 -m src.main --source /mnt/data/AutoGrader_Final_Submission/tests/inputs/memory_error.c --tests /mnt/data/AutoGrader_Final_Submission/tests/sample_cases.json --rules /mnt/data/AutoGrader_Final_Submission/rules/rules.json --output-dir /mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/memory_error
+EXIT: 0
+STDOUT:
+{
+  "overall_score": 55.56,
+  "report_paths": {
+    "json": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/memory_error/grade_report.json",
+    "text": "/mnt/data/AutoGrader_Final_Submission/reports/sample_outputs/memory_error/grade_report.txt"
+  },
+  "errors": []
+}
+
+STDERR:

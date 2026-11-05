@@ -1,0 +1,62 @@
+AUTOGRADER FINAL FIX / AUDIT
+=============================
+
+Changes included
+----------------
+1. Infinite-loop / first-pass failure policy:
+   - Added configurable grading_policy.first_pass_failure in rules/rules.json.
+   - Smoke timeout/crash/error blocks execution analyzers, marks correctness not_run,
+     emits a review flag, and caps the diagnostic weighted score (default 20/100).
+   - UI exposes the enable switch and cap control and displays the reason.
+2. Assignment-agnostic test configuration:
+   - Removed factorial/add-two-integers templates from the UI and removed the
+     template generator module/tests. The suite starts empty and requires
+     instructor-supplied trusted cases/oracle for the assignment being graded.
+3. Originality:
+   - Improved token normalization: strips comments, normalizes literals and user
+     identifiers, preserves C keywords/common library calls.
+   - Batch submissions can be compared pairwise; evidence remains a human-review
+     signal, never proof of plagiarism or LLM use.
+4. Security:
+   - Existing timeout, bounded output, process cleanup, POSIX resource limits and
+     ASan/UBSan retained.
+   - Added docs/SECURITY_SANDBOX.md explaining the security boundary and deployment
+     requirements. The runner is NOT represented as a complete sandbox.
+5. Batch grading:
+   - Streamlit accepts multiple C submissions, applies one test suite/rubric to each,
+     optionally compares submissions, and exports CSV summary + ZIP reports.
+6. Sample outputs:
+   - Added scripts/generate_sample_reports.py.
+   - Added reproducible reports for correct, wrong-answer, compile-failure,
+     infinite-loop and memory-error examples under reports/sample_outputs/.
+
+Validation
+----------
+- Python compileall: passed.
+- Unit/integration tests: 25 run, all passed; 1 skipped.
+- The skipped test is the ASan out-of-bounds detector because the audit runtime's
+  GCC AddressSanitizer runtime is incompatible/unavailable. The analyzer correctly
+  reports sanitizer_runtime_unavailable rather than claiming a clean result.
+- End-to-end sample reports generated for all five sample programs.
+- Streamlit browser interaction was not launched in this isolated environment
+  because Streamlit is not installed here. Run locally with:
+      source .venv/bin/activate
+      streamlit run app.py
+
+Important limitations
+---------------------
+- A finite suite cannot prove correctness.
+- New assignment types require an instructor-supplied template/oracle.
+- Originality flags require a reference corpus and human review.
+- Resource limits and sanitizers do not make the runner a hardened sandbox.
+  Use an institution-managed disposable VM/container for untrusted submissions.
+
+
+Universal UI correction (2026-11-04)
+-----------------------------------
+- Removed the problem-template selector and all factorial/addition generator code.
+- Removed the template-specific generator and its tests.
+- Test suite starts empty; instructor imports or authors trusted assignment-specific cases.
+- Updated README and usefulness/limitations documentation to match the UI.
+- Validation after this change: compileall passed; 26 unit/integration tests passed.
+- Streamlit is not installed in the isolated build environment, so interactive browser launch was not verified here.

@@ -1,0 +1,6 @@
+[
+  {"name":"pdf_sample_7_5","input":"7 5\n","expected_output":"12\n"},
+  {"name":"negative_values","input":"-7 3\n","expected_output":"-4\n"},
+  {"name":"zero","input":"0 0\n","expected_output":"0\n"},
+  {"name":"signed_int_boundary","input":"2147483647 1\n","expected_output":"-2147483648\n"}
+]
